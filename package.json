@@ -1,7 +1,7 @@
 {
-  "name": "dailt-todo",
+  "name": "daily-todo",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.jsx",
   "dependencies": {
     "expo": "~57.0.19",
     "expo-status-bar": "~57.0.1",
