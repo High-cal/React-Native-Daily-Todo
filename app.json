@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "dailt-todo",
-    "slug": "dailt-todo",
+    "name": "daily-todo",
+    "slug": "daily-todo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

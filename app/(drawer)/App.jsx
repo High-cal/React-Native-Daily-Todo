@@ -1,14 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Button, Alert } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
+  const onPress = () => {
+    Alert.alert('not lagging');
+  };
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
+      <Text>Search Bar</Text>
       <Text style={styles.title}>Daily Todo</Text>
       <Text style={styles.message}>Open App.jsx to start working on your app!</Text>
-      <Text style={styles.status}>Expo template loaded</Text>
+      <Button onPress={onPress} title="I am A test"/>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -17,7 +22,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
   },
   title: {
     fontSize: 28,
