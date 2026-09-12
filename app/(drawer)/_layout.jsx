@@ -1,11 +1,24 @@
 import { Text, View, Linking } from 'react-native';
-import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
-import { Drawer } from 'Expo-router/drawer';
+import { DrawerContentScrollView, DrawerItemList, DrawerItem } from 'expo-router/drawer';
+import { Drawer } from 'expo-router/drawer';
 
-function Home(props) {
+export default function Layout() {
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text>Home</Text>
-        </View>
-    )
+        <Drawer>
+            <Drawer.Screen 
+                name='index'
+                options={{
+                    drawerLabel: 'Home',
+                    title: 'overview'
+                }}
+            />
+            <Drawer.Screen 
+                name='tomorrow'
+                options={{
+                    drawerLabel: "Edit Tomorrow's todo",
+                    title: 'overview'
+                }}
+            />
+        </Drawer>
+    );
 }
