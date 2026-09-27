@@ -35,8 +35,4 @@ const styles = StyleSheet.create({
   message: {
     textAlign: 'center',
   },
-  status: {
-    color: '#666',
-    marginTop: 12,
-  },
 });
