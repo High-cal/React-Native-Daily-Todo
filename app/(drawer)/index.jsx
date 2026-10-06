@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Button, Alert } from 'react-native';
+import { StyleSheet, Text, Button, Alert, FlatList, TextInput} from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Seperator from '../../components/seperator';
 
@@ -11,7 +11,6 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Daily Todo</Text>
       <Seperator />
-      <Text></Text>
       <Button onPress={onPress} title="I am A test"/>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -31,6 +30,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     textAlign: 'left',
     paddingLeft: 10,
+    alignitems: 'flex-start',
   },
   message: {
     textAlign: 'center',

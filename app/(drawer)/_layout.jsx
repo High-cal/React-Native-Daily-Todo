@@ -15,8 +15,15 @@ export default function Layout() {
             <Drawer.Screen 
                 name='tomorrow'
                 options={{
-                    drawerLabel: "Edit Tomorrow's todo",
-                    title: 'Add New Todo for Tomorrow'
+                    drawerLabel: "Add New Task for Tomorrow",
+                    title: 'Add New Tasks for Tomorrow'
+                }}
+            />
+            <Drawer.Screen 
+                name='list'
+                options={{
+                    drawerLabel: "Create Daily List",
+                    title: 'Edit and Add Daily List'
                 }}
             />
         </Drawer>
