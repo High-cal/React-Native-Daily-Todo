@@ -1,14 +1,17 @@
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Text, StyleSheet, TextInput } from 'react-native';
+import { Text, StyleSheet, TextInput, FlatList } from 'react-native';
 import { useState } from 'react';
+import TaskItem from '../../components'
+import { useTasks } from '../../context/TaskContext'
 
 
-export default function List({ onAddTask }) {
+export default function List() {
     const [task, setTask] = useState('');
+    const { tasks, addTask, editTask, deleteTask } = useTasks();
 
     const handleSubmit = () => {
       if (task.trim().length === 0) return;
-      onAddTask('task');
+      addTask(task.trim());
       setTask('');
     };
 
@@ -16,12 +19,19 @@ export default function List({ onAddTask }) {
         <SafeAreaView style={{ flex:1 }}>
             <Text style={styles.title}>List</Text>
             <TextInput
-            style={styles.input}
-            placeholder="Add a new task..."
-            value={task}
-            onChangeText={setTask}
-            onSubmitEditing={handleSubmit}
-            returnKeyType="Done"
+              style={styles.input}
+              placeholder="Add a new task..."
+              value={task}
+              onChangeText={setTask}
+              onSubmitEditing={handleSubmit}
+              returnKeyType="Done"
+            />
+            <FlatList
+              data={tasks}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) => (
+                <TaskItem task={item} onEdit={editTask} onDelete={deleteTask}/>
+              )}
             />
         </SafeAreaView>
     );

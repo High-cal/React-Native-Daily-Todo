@@ -1,9 +1,11 @@
 import { Text, View, Linking } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from 'expo-router/drawer';
 import { Drawer } from 'expo-router/drawer';
+import { TaskProvider } from '../../context/TaskContext';
 
 export default function Layout() {
     return (
+        <TaskProvider>
         <Drawer>
             <Drawer.Screen 
                 name='index'
@@ -27,5 +29,6 @@ export default function Layout() {
                 }}
             />
         </Drawer>
+        </TaskProvider>
     );
 }
